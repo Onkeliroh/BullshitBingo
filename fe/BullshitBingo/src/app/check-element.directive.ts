@@ -5,7 +5,7 @@ import { Directive, HostListener, ElementRef, HostBinding } from '@angular/core'
 })
 export class CheckElementDirective {
 
-  @HostBinding('class.checked') isChecked = false;
+  @HostBinding('class.bg-success') isChecked = false;
 
   constructor(private el: ElementRef) { }
 

@@ -3,11 +3,13 @@
     <table class="table">
       <tbody *ngFor="let wordItemRow of wordItemGrid">
         <tr>
-          <td appCheckElement *ngFor="let wordItem of wordItemRow">
-            <span>
-              <div class="checkmark">L</div>
-              {{ wordItem.word }}
-            </span>
+          <td
+            style="width:20%"
+            colspan="1"
+            appCheckElement
+            *ngFor="let wordItem of wordItemRow"
+          >
+            {{ wordItem.word }}
           </td>
         </tr>
       </tbody>

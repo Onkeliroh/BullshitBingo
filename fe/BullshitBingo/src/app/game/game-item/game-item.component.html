@@ -1,12 +1,13 @@
 <div class="container">
-  <div class="row">
+  <div style="height:60px" class="row">
     <div class="container col-sm-8">
       {{ wordItem.word }}
     </div>
-    <div class="container col-sm-2">
-      <span [style.visibility]="wordItem.isChecked ? 'visible' : 'hidden'"
-        >&#10003;</span
-      >
+    <div
+      class="container col-sm-2"
+      [style.visibility]="wordItem.isChecked ? 'visible' : 'hidden'"
+    >
+      <span>&#10003;</span>
     </div>
   </div>
 </div>

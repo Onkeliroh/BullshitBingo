@@ -16,7 +16,7 @@ export class GameFieldComponent {
   constructor(gameSupplierService: GameSupplierService) {
     this.gameSupplierService = gameSupplierService;
 
-    const wordItems = this.gameSupplierService.getRandomOrderedList();
+    const wordItems = this.gameSupplierService.wordItems;
 
     for (var _i = 0; _i < wordItems.length; _i = _i + 5) {
       this.wordItemGrid.push(wordItems.slice(_i, _i + 5));

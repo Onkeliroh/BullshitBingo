@@ -35,10 +35,6 @@ export class GameSupplierService {
       { word: 'Email' },
       { word: 'historisch gewachsen' },
       { word: 'Bug' }
-    ];
-  }
-
-  public getRandomOrderedList(): WordItem[] {
-    return this.wordItems.sort(() => .5 - Math.random());
+    ].sort(() => .5 - Math.random());
   }
 }

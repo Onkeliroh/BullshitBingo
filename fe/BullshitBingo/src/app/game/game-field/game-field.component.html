@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <tbody *ngFor="let wordItemRow of wordItemGrid">
+        <tr>
+          <td appCheckElement *ngFor="let wordItem of wordItemRow">
+            <span>
+              <div class="checkmark">L</div>
+              {{ wordItem.word }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

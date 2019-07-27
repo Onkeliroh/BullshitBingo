@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameSupplierService } from 'src/app/services/game-supplier.service';
+import { WordItem } from 'src/app/services/word-item';
 
 @Component({
   selector: 'app-game-field',

@@ -5,11 +5,10 @@
         <tr>
           <td
             style="width:20%"
-            colspan="1"
-            appCheckElement
-            *ngFor="let wordItem of wordItemRow"
+            [class.bg-success]="wordItemObj.isChecked"
+            *ngFor="let wordItemObj of wordItemRow"
           >
-            {{ wordItem.word }}
+            <app-game-item [wordItem]="wordItemObj"></app-game-item>
           </td>
         </tr>
       </tbody>

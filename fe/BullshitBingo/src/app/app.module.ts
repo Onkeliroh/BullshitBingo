@@ -7,7 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { GameScoreComponent } from './game/game-score/game-score.component';
 import { TitlePageComponent } from './title-page/title-page.component';
 import { GameFieldComponent } from './game/game-field/game-field.component';
-import { CheckElementDirective } from './check-element.directive';
+import { GameItemComponent } from './game/game-item/game-item.component';
 
 const appRoutes: Routes = [
   { path: '', component: TitlePageComponent },
@@ -23,7 +23,7 @@ const appRoutes: Routes = [
     GameScoreComponent,
     TitlePageComponent,
     GameFieldComponent,
-    CheckElementDirective
+    GameItemComponent
   ],
   imports: [
     RouterModule.forRoot(

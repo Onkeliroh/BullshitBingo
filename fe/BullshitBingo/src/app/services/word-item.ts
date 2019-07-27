@@ -1,3 +1,4 @@
-class WordItem {
-  constructor(word: string, isChecked = false) { }
+export interface WordItem {
+  word: string;
+  isChecked?: boolean;
 }

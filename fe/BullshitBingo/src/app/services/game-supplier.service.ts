@@ -36,4 +36,8 @@ export class GameSupplierService {
       { word: 'Bug' }
     ];
   }
+
+  public getRandomOrderedList(): WordItem[] {
+    return this.wordItems.sort(() => .5 - Math.random());
+  }
 }

@@ -15,9 +15,10 @@ export class GameFieldComponent {
   constructor(gameSupplierService: GameSupplierService) {
     this.gameSupplierService = gameSupplierService;
 
-    console.log(this.gameSupplierService.wordItems.length);
-    for (var _i = 0; _i < this.gameSupplierService.wordItems.length; _i = _i + 5) {
-      this.wordItemGrid.push(this.gameSupplierService.wordItems.slice(_i, _i + 5));
+    const wordItems = this.gameSupplierService.getRandomOrderedList();
+
+    for (var _i = 0; _i < wordItems.length; _i = _i + 5) {
+      this.wordItemGrid.push(wordItems.slice(_i, _i + 5));
       console.log(this.wordItemGrid);
     }
   }

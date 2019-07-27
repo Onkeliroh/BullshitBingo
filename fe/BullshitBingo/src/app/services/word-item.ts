@@ -1,4 +1,3 @@
 class WordItem {
-  public isChecked?: boolean = false;
-  public word: string;
+  constructor(word: string, isChecked = false) { }
 }

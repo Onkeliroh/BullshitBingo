@@ -1,40 +1,24 @@
 import { Injectable } from '@angular/core';
 import { WordItem } from './word-item';
+import * as WordLists from '../../assets/wordLists.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameSupplierService {
 
-  public wordItems: WordItem[];
-
   constructor() {
-    this.wordItems = [
-      { word: 'Tschüss' },
-      { word: 'Production' },
-      { word: 'RegTests' },
-      { word: 'RC *' },
-      { word: 'DEV *' },
-      { word: 'Git' },
-      { word: 'Kubernetes' },
-      { word: 'Docker' },
-      { word: 'Rot' },
-      { word: 'Grün' },
-      { word: 'unverändert' },
-      { word: 'PO' },
-      { word: 'Problem' },
-      { word: 'Happy Path' },
-      { word: 'Meeting' },
-      { word: 'Wir gucken uns das an' },
-      { word: 'Netzwerk' },
-      { word: 'Frage' },
-      { word: 'Sprint' },
-      { word: 'Release' },
-      { word: 'Legacy' },
-      { word: 'WAS' },
-      { word: 'Email' },
-      { word: 'historisch gewachsen' },
-      { word: 'Bug' }
-    ].sort(() => .5 - Math.random());
+
+  }
+
+  public getRandomizedWordlist(gameSeed?: string): WordItem[] {
+    const wordString: string = WordLists[0].list;
+
+    const list = Array<WordItem>();
+
+    wordString.split(',').forEach(element => {
+      list.push({ word: element });
+    });
+    return list.sort(() => .5 - Math.random());
   }
 }

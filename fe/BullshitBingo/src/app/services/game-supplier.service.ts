@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
-import { WordItem } from './word-item';
-import * as WordLists from '../../assets/wordLists.json';
+import WordLists from '../../assets/wordLists.json';
+import { WordListItem } from './word-list-item.js';
+import { WordItem } from './word-item.js';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameSupplierService {
 
-  constructor() {
-
-  }
+  wordLists: WordListItem[] = WordLists;
 
   public getRandomizedWordlist(gameSeed?: string): WordItem[] {
-    const wordString: string = WordLists[0].list;
+    let wordString: string = this.wordLists[0].list;
+    if (gameSeed != null) {
+      this.wordLists.forEach(element => {
+        if (element.name === gameSeed) {
+          wordString = element.list;
+        }
+      });
+    }
 
     const list = Array<WordItem>();
 

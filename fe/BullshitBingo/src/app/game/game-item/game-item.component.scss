@@ -1,11 +1,14 @@
 .word {
-    width: 80%;
+    width: 100%;
     text-align: center;
+    position: absolute;
 }
 
 .check {
-    width: 20%;
+    width: 100%;
     text-align: center;
+    position: absolute;
+    font-size: 300%;
 }
 
 .word-container {
@@ -13,4 +16,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }

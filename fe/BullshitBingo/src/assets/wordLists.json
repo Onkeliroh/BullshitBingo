@@ -1,0 +1,6 @@
+[
+  {
+    "name": "default",
+    "list": "Tschüss,Production,RegTests,RC *,DEV *,Git,Kubernetes,Docker,Rot,Grün,unverändert,PO,Problem,Happy Path,Meeting,Wir gucken uns das an,Netzwerk,Frage,Sprint,Release,Legacy,WAS,Email,historisch gewachsen,Bug"
+  }
+]

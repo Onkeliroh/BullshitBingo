@@ -1,4 +1,8 @@
 <div class="word-container">
-    <span class="word">{{ wordItem.word }}</span>
-    <span class="check">&#10003;</span>
+  <span class="word">{{ wordItem.word }}</span>
+  <span
+    [style.visibility]="wordItem.isChecked ? 'visible' : 'hidden'"
+    class="check"
+    >&#10003;</span
+  >
 </div>

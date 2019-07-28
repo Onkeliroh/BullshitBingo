@@ -1,5 +1,30 @@
-<div class="container">
-  <a [routerLink]="['/game']">
-    To the game...
-  </a>
+<div class="container w-100">
+  <hr />
+  <div class="row">
+    <div class="container col-sm-12">
+      <div class="row">
+        <button class="btn btn-success w-100 h-100" [routerLink]="['/game']">
+          New random game
+        </button>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="container col-sm-12">
+      <div class="row">
+        <button class="btn disabled btn-success h-100 col-sm-6">
+          Join Game
+        </button>
+        <input
+          class="col-sm-6 input-group-text disabled"
+          type="text"
+          name="GameSeed"
+          id="GameSeed"
+          placeholder="GameSeed"
+        />
+      </div>
+    </div>
+  </div>
+  <hr />
 </div>

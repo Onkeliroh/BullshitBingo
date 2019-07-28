@@ -1,13 +1,8 @@
-<div class="container">
-  <div style="height:60px" class="row">
-    <div class="container col-sm-8">
-      {{ wordItem.word }}
-    </div>
-    <div
-      class="container col-sm-2"
-      [style.visibility]="wordItem.isChecked ? 'visible' : 'hidden'"
-    >
-      <span>&#10003;</span>
-    </div>
-  </div>
+<div class="word-container">
+  <span class="word">{{ wordItem.word }}</span>
+  <span
+    [style.visibility]="wordItem.isChecked ? 'visible' : 'hidden'"
+    class="check"
+    >&#10003;</span
+  >
 </div>

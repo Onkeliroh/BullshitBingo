@@ -24,7 +24,7 @@ export class GameSupplierService {
     const list = Array<WordItem>();
 
     wordString.split(',').forEach(element => {
-      list.push({ word: element });
+      list.push({ word: element, isChecked: false });
     });
     return list.sort(() => .5 - Math.random());
   }

@@ -1,13 +1,16 @@
 .word {
-    margin-left: 10px;
-    float: left;
-    height: 100%;
-    position: relative;
+    width: 80%;
+    text-align: center;
 }
 
 .check {
-    margin-right: 10px;
-    float: right;
+    width: 20%;
+    text-align: center;
+}
+
+.word-container {
     height: 100%;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }

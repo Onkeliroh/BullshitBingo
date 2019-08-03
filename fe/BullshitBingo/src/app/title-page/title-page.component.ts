@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TitlePageComponent implements OnInit {
 
-  constructor() { }
+  gameSeed = 'GameSeed';
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  printClick(event) {
+    console.log(this.gameSeed);
+    console.log(event);
   }
-
 }

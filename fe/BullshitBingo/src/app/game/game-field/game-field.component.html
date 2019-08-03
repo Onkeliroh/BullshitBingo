@@ -8,20 +8,44 @@
         YOU WON!
       </h1>
     </div>
-    <table class="table table-bordered">
-      <tbody *ngFor="let wordItemRow of wordItemGrid">
-        <tr>
-          <td
-            [class.bg-success]="wordItemObj.isChecked"
-            *ngFor="let wordItemObj of wordItemRow"
-          >
-            <app-game-item
-              (wordItemCheckedEvent)="onWordItemCheck($event)"
-              [wordItem]="wordItemObj"
-            ></app-game-item>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="container m-3">
+      <table class="table table-bordered">
+        <tbody *ngFor="let wordItemRow of wordItemGrid">
+          <tr>
+            <td
+              [class.bg-success]="wordItemObj.isChecked"
+              *ngFor="let wordItemObj of wordItemRow"
+            >
+              <app-game-item
+                (wordItemCheckedEvent)="onWordItemCheck($event)"
+                [wordItem]="wordItemObj"
+              ></app-game-item>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container col-sm-1">
+      <!-- https://www.fileformat.info/info/unicode/char/1f4cb/index.htm -->
+      <button
+        class="btn btn-info"
+        title="Copy game seed url"
+        (click)="copyGameSeedUrlToClipboard($event)"
+      >
+        📋
+      </button>
+    </div>
+    <div class="container col-sm-11">
+      <input
+        class="input-group-text m-0 w-100"
+        type="text"
+        name="gameseedUrlText"
+        id="gameseedUrlText"
+        disabled="true"
+        [(ngModel)]="gameseedUrl"
+      />
+    </div>
   </div>
 </div>

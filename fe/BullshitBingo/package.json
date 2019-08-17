@@ -51,9 +51,13 @@
   },
   "auto-changelog": {
     "output": "src/assets/changelog.md",
-    "template": "keepachangelog",
-    "unreleased": false,
-    "commit-limit": 10,
-    "package": true
+    "package": true,
+    "issue-url": "https://github.com/Onkeliroh/BullshitBingo/issues",
+    "sort-commits": "date-desc",
+    "release-summary": true,
+    "unreleased": true,
+    "commit-limit": 20,
+    "backfill-limit": 20,
+    "stdout": false
   }
 }

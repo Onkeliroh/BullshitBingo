@@ -9,12 +9,16 @@ import { GameScoreComponent } from './game/game-score/game-score.component';
 import { TitlePageComponent } from './title-page/title-page.component';
 import { GameFieldComponent } from './game/game-field/game-field.component';
 import { GameItemComponent } from './game/game-item/game-item.component';
+import { ChangelogComponent } from './title-page/changelog/changelog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MarkedPipe } from './pipes/marked.pipe';
 
 
 const appRoutes: Routes = [
   { path: '', component: TitlePageComponent },
   { path: 'game', component: GameFieldComponent },
   { path: 'score', component: GameScoreComponent },
+  { path: 'changelog', component: ChangelogComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -25,12 +29,15 @@ const appRoutes: Routes = [
     GameScoreComponent,
     TitlePageComponent,
     GameFieldComponent,
-    GameItemComponent
+    GameItemComponent,
+    ChangelogComponent,
+    MarkedPipe
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { enableTracing: false }),
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

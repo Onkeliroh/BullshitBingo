@@ -1,8 +1,27 @@
 <header>
   <nav class="navbar navbar-dark bg-dark">
     <span [routerLink]="['/']" class="navbar-brand mb-0 h1">{{ title }}</span>
-    <span class="navbar-brand navbar-text" id="version">Version: {{ version }}</span>
+    <span
+      [routerLink]="['/changelog']"
+      class="navbar-brand navbar-text"
+      id="version"
+      >Version: {{ version }}</span
+    >
   </nav>
 </header>
 
 <router-outlet></router-outlet>
+
+<footer class="footer bg-dark pl-2 pr-2">
+  <div class="row m-0">
+    <div class="container col-sm-12">
+      <a href="https://github.com/Onkeliroh/BullshitBingo" target="_blank">
+        <img
+          src="../assets/img/GitHub-Mark-Light-32px.png"
+          alt="GitHub project link"
+          class="img-thumbnail-dark"
+        />
+      </a>
+    </div>
+  </div>
+</footer>

@@ -55,10 +55,8 @@ export class GameFieldComponent implements OnInit {
   }
 
   private checkColumnBingo() {
-    // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < this.wordItemGrid.length; i++) {
       let isWon = true;
-      // tslint:disable-next-line: prefer-for-of
       for (let y = 0; y < this.wordItemGrid[i].length; y++) {
         isWon = isWon && this.wordItemGrid[y][i].isChecked;
       }
@@ -82,25 +80,27 @@ export class GameFieldComponent implements OnInit {
   }
 
   private checkDiagonalBingo(): boolean {
+    const rowLength = this.wordItemGrid[0].length;
     let wordItemsList = Array<WordItem>();
     this.wordItemGrid.forEach(
       row => (wordItemsList = wordItemsList.concat(row))
     );
-    let isWon =
-      wordItemsList[0].isChecked &&
-      wordItemsList[6].isChecked &&
-      wordItemsList[12].isChecked &&
-      wordItemsList[18].isChecked &&
-      wordItemsList[24].isChecked;
-    if (isWon) {
-      return true;
+
+    let isWon = false;
+
+    // top left to bottom right
+    for (let index = 0; index < wordItemsList.length; index = index + rowLength + 1) {
+      isWon = wordItemsList[index].isChecked;
+      if (!isWon) { break; }
     }
-    isWon =
-      wordItemsList[4].isChecked &&
-      wordItemsList[8].isChecked &&
-      wordItemsList[12].isChecked &&
-      wordItemsList[16].isChecked &&
-      wordItemsList[20].isChecked;
+    if (isWon) { return isWon; }
+
+    // top right to bottom left
+    for (let index = rowLength - 1; index < wordItemsList.length - 1; index = index + rowLength - 1) {
+      isWon = wordItemsList[index].isChecked;
+      if (!isWon) { break; }
+    }
+
     return isWon;
   }
 
@@ -110,7 +110,7 @@ export class GameFieldComponent implements OnInit {
 
   private copyStringToClipboard(str) {
     // Create new element
-    var el = document.createElement('textarea');
+    const el = document.createElement('textarea');
     // Set value (string to be copied)
     el.value = str;
     // Set non-editable to avoid focus and move outside of view

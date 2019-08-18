@@ -7,7 +7,7 @@ export class DecompressStringPipe implements PipeTransform {
   lzjs = require('lzjs');
 
   transform(value: any): any {
-    return this.lzjs.decompress(value);
+    return btoa(this.lzjs.decompress(value));
   }
 
 }

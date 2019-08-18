@@ -8,9 +8,9 @@ export class CompressStringPipe implements PipeTransform {
 
   transform(value: any): any {
     if (Array.isArray(value)) {
-      return this.lzjs.compress(value.join(','));
+      return this.lzjs.compress(atob(value.join(',')));
     }
-    return this.lzjs.compress(value);
+    return this.lzjs.compress(atob(value));
   }
 
 }

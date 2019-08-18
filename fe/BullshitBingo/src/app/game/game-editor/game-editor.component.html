@@ -1,1 +1,23 @@
-<p>game-editor works!</p>
+<div class="container col-2-10 mt-3">
+  <div class="row">
+    <div class="container col-11">
+      <tag-input [(ngModel)]="items"></tag-input>
+    </div>
+    <div class="container col-1">
+      <div class="row">
+        <p id="tagcounter">#Tags: {{ items.length }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="container d-flex justify-content-center">
+      <button
+        class="btn btn-success col-3"
+        [routerLink]="['/game']"
+        [queryParams]="{ seed: generateGameSeed() }"
+      >
+        Start the game
+      </button>
+    </div>
+  </div>
+</div>

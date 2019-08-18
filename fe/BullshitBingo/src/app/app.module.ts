@@ -12,10 +12,15 @@ import { GameItemComponent } from './game/game-item/game-item.component';
 import { ChangelogComponent } from './title-page/changelog/changelog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MarkedPipe } from './pipes/marked.pipe';
+import { CompressStringPipe } from './pipes/compress-string.pipe';
+import { DecompressStringPipe } from './pipes/uncompress-string.pipe';
+import { GameEditorComponent } from './game/game-editor/game-editor.component';
 
 
 const appRoutes: Routes = [
   { path: '', component: TitlePageComponent },
+  { path: 'game/create', component: GameEditorComponent },
+  { path: 'game/:seed', component: GameFieldComponent },
   { path: 'game', component: GameFieldComponent },
   { path: 'score', component: GameScoreComponent },
   { path: 'changelog', component: ChangelogComponent },
@@ -31,7 +36,10 @@ const appRoutes: Routes = [
     GameFieldComponent,
     GameItemComponent,
     ChangelogComponent,
-    MarkedPipe
+    MarkedPipe,
+    CompressStringPipe,
+    DecompressStringPipe,
+    GameEditorComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { enableTracing: false }),

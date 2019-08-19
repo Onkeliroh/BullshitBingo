@@ -12,15 +12,7 @@ export class GameSupplierService {
   public getRandomizedWordlist(gameSeed?: string): WordItem[] {
     let wordString: string = this.wordLists[0].list;
     if (gameSeed != null) {
-      const filteredList = this.wordLists.filter(x => x.name === gameSeed);
-      if (filteredList.length > 0) {
-        wordString = filteredList[0].list;
-      }
-      // this.wordLists.forEach(element => {
-      //   if (element.name === gameSeed) {
-      //     wordString = element.list;
-      //   }
-      // });
+      wordString = gameSeed;
     }
 
     if (wordString.length === 0) {

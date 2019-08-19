@@ -12,6 +12,18 @@
     <div class="container col-sm-8">
       <div class="row">
         <button
+          class="btn btn-success w-100 h-100"
+          [routerLink]="['/game/create']"
+        >
+          Create custom game
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-3">
+    <div class="container col-sm-8">
+      <div class="row">
+        <button
           class="btn btn-success h-100 col-sm-6"
           [routerLink]="['/game']"
           [queryParams]="{ seed: gameSeed }"

@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { join } from 'path';
+import { Component } from '@angular/core';
 import { GameSeedUtil } from 'src/app/utils/game-seed-util';
 
 @Component({
@@ -7,15 +6,13 @@ import { GameSeedUtil } from 'src/app/utils/game-seed-util';
   templateUrl: './game-editor.component.html',
   styles: ['#tagcounter { font-weight: bold; }']
 })
-export class GameEditorComponent implements OnInit {
-  items = ['Tschüss', 'Production', 'RegTests', 'RC *', 'DEV *', 'Git', 'Kubernetes', 'Docker', 'Rot', 'Gruen', 'unveraendert', 'PO', 'Problem', 'Happy Path', 'Meeting', 'Wir gucken uns das an', 'Netzwerk', 'Frage', 'Sprint', 'Release', 'Legacy', 'WAS', 'Email', 'historisch gewachsen', 'Bug'];
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class GameEditorComponent {
+  items = [];
 
   generateGameSeed(): string {
-    return GameSeedUtil.generateGameSeed(this.items.join(','));
+    const gameSeedString = [...this.items.filter(x => typeof (x) === 'string').map(x => x),
+    ...this.items.filter(x => typeof (x) === 'object').map((x: any) => x.value)].join(',');
+    return GameSeedUtil.generateGameSeed(gameSeedString);
   }
 
 }

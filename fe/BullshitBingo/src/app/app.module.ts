@@ -15,6 +15,8 @@ import { MarkedPipe } from './pipes/marked.pipe';
 import { CompressStringPipe } from './pipes/compress-string.pipe';
 import { DecompressStringPipe } from './pipes/uncompress-string.pipe';
 import { GameEditorComponent } from './game/game-editor/game-editor.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TagInputModule } from 'ngx-chips';
 
 
 const appRoutes: Routes = [
@@ -45,7 +47,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { enableTracing: false }),
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TagInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

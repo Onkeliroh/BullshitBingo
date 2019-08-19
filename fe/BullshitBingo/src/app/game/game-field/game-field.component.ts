@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GameSupplierService } from 'src/app/services/game-supplier.service';
 import { WordItem } from 'src/app/services/word-item';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GameSeedUtil } from 'src/app/utils/game-seed-util';
 
 
 @Component({
@@ -21,14 +22,13 @@ export class GameFieldComponent implements OnInit {
   gameseedUrl: string;
 
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe(x => (this.gameSeed = x.get('seed')));
+    this.route.queryParamMap.subscribe(x => (this.gameSeed = GameSeedUtil.extractGameSeed(x.get('seed'))));
     console.log('GameSeed: ' + this.gameSeed);
 
     const wordItems = this.gameSupplierService.getRandomizedWordlist(
       this.gameSeed
     );
 
-    // this.gameseedUrl = document.location.protocol + '//' + document.location.hostname + ':' + document.location.port + this.router.url;
     this.gameseedUrl = location.protocol + '//' + location.host + this.router.url;
 
     for (let i = 0; i < wordItems.length; i = i + 5) {
